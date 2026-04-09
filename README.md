@@ -126,6 +126,12 @@ flowchart TD
   H --> I[Write summary, detailed, metadata, genes-only CSVs]
 ```
 
+**How it works (text explanation):**
+1. The script creates multiple PubMed search strategies for the same phenotype, so it captures broader literature coverage.
+2. It first collects PMIDs, then fetches article metadata and PubTator3 gene annotations separately.
+3. Gene mentions are normalized and merged with article context, then summarized by evidence strength (`PMID_Count`).
+4. Final outputs include a summary table, detailed mention-level evidence, metadata, and a genes-only file.
+
 ---
 
 #### 2. `omim.R` - OMIM
@@ -152,6 +158,12 @@ flowchart TD
   H --> I[Write OMIM full and genes-only CSVs]
 ```
 
+**How it works (text explanation):**
+1. The script builds phenotype-specific OMIM search terms and attempts the official OMIM API first.
+2. If API access is unavailable or returns no hits, it falls back to OMIM search-page scraping.
+3. Both paths produce candidate gene symbols, which are cleaned, deduplicated, and sorted.
+4. It writes one detailed OMIM result file and one genes-only file.
+
 ---
 
 #### 3. `string_db.R` - STRING-DB
@@ -175,6 +187,12 @@ flowchart TD
   F --> G[Deduplicate by Gene and rank by score]
   G --> H[Write STRING full and genes-only CSVs]
 ```
+
+**How it works (text explanation):**
+1. The phenotype text is resolved into STRING seed proteins using `get_string_ids`.
+2. For each seed, the script queries interaction partners and keeps human partners above the confidence threshold.
+3. Partner genes are collected with interaction scores and STRING IDs.
+4. Genes are deduplicated and ranked by interaction strength before export.
 
 ---
 
@@ -200,6 +218,12 @@ flowchart TD
   G --> H[Write DisGeNET full and genes-only CSVs]
 ```
 
+**How it works (text explanation):**
+1. The phenotype is mapped to disease identifiers through DisGeNET/UMLS lookup.
+2. The script builds multiple candidate disease queries (ID variants and phenotype text fallback).
+3. It runs `disease2gene` with score filtering and keeps the first successful association table.
+4. Results are exported as a full association file plus a genes-only list.
+
 ---
 
 #### 5. `clinvar.R` - ClinVar Structured XML
@@ -223,6 +247,12 @@ flowchart TD
   F --> G[Deduplicate by Gene and VariationID]
   G --> H[Write ClinVar full and genes-only CSVs]
 ```
+
+**How it works (text explanation):**
+1. The script searches ClinVar using multiple phenotype-oriented query forms.
+2. It fetches VCV XML in batches and parses structured tags (not loose free-text regex extraction).
+3. It extracts gene symbols plus variant IDs, conditions, and clinical significance metadata.
+4. Gene-variant records are deduplicated and written to full + genes-only outputs.
 
 ---
 
@@ -248,6 +278,12 @@ flowchart TD
   G --> H[Deduplicate genes and write CSVs]
 ```
 
+**How it works (text explanation):**
+1. The script loads all human Reactome pathways from local annotation databases.
+2. It builds regex patterns from the phenotype text and finds matching pathway names.
+3. Matched pathway IDs are converted to Entrez IDs, then mapped to gene symbols.
+4. Genes are deduplicated and exported with pathway context.
+
 ---
 
 #### 7. `kegg.R` - KEGG
@@ -272,6 +308,12 @@ flowchart TD
   F --> G[Extract gene symbols and KEGG gene IDs]
   G --> H[Deduplicate and write full, genes-only, pathways-only CSVs]
 ```
+
+**How it works (text explanation):**
+1. KEGG pathway titles are scored against the phenotype text (exact phrase + keyword overlap).
+2. Only matched pathways are fetched in detail; this is the key indirect mapping step.
+3. Genes are parsed directly from KEGG pathway `GENE` fields (ID/description pairs).
+4. Outputs include full pathway-gene mappings, genes-only, and pathways-only tables.
 
 ---
 
@@ -299,6 +341,12 @@ flowchart TD
   H --> I
 ```
 
+**How it works (text explanation):**
+1. HPO resources are downloaded/cached locally (ontology + annotation files).
+2. The phenotype is expanded into search patterns and matched against HPO term and disease annotations.
+3. Hits are scored by match type (exact/contains/pattern), then deduplicated.
+4. If no ontology hits are found, a fallback known-association gene set is used.
+
 ---
 
 #### 9. `gtex.R` - GTEx Dynamic Tissue Prioritization
@@ -325,6 +373,12 @@ flowchart TD
   G --> H[Write ranked tissues, eQTL rows, prioritized genes, genes-only CSVs]
 ```
 
+**How it works (text explanation):**
+1. The script first ranks GTEx tissues by PubMed co-mention counts with the phenotype.
+2. It queries eGenes for top-ranked tissues and filters using significance thresholds.
+3. Tissue-level gene signals are aggregated into prioritized gene summaries.
+4. It exports ranked tissues, full tissue-eQTL rows, prioritized genes, and genes-only files.
+
 ---
 
 #### 10. `uniprot.R` - UniProt
@@ -348,6 +402,12 @@ flowchart TD
   F --> G[Write UniProt full and genes-only CSVs]
 ```
 
+**How it works (text explanation):**
+1. Multiple UniProt query templates are generated to capture different annotation fields.
+2. Searches are restricted to reviewed human records for quality control.
+3. Primary and synonym gene names are extracted from each hit and merged.
+4. Final deduplicated genes are written with UniProt metadata.
+
 ---
 
 #### 11. `opentargets.R` - Open Targets
@@ -369,6 +429,12 @@ flowchart TD
   D --> E[Extract approved symbol, ID, name, score]
   E --> F[Write OpenTargets full and genes-only CSVs]
 ```
+
+**How it works (text explanation):**
+1. A GraphQL search resolves phenotype text to the closest disease entry.
+2. The selected disease ID is used to request associated targets page-by-page.
+3. Target symbol, target ID, gene name, and association score are extracted.
+4. Results are saved as a full table and a genes-only file.
 
 ---
 
@@ -392,6 +458,12 @@ flowchart TD
   E --> F[Combine and deduplicate gene-variant rows]
   F --> G[Write GWAS full and genes-only CSVs]
 ```
+
+**How it works (text explanation):**
+1. The phenotype is expanded into additional trait phrases (generic and phenotype-specific expansions).
+2. The script queries GWAS both by EFO trait and reported trait for each candidate term.
+3. Variant genomic-context mappings are converted to gene-centric rows.
+4. Combined rows are deduplicated and exported as full GWAS mappings plus genes-only output.
 
 ---
 
@@ -808,58 +880,9 @@ python download_genes_analysis.py migraine
 - Cross-database validation
 - Evidence aggregation scoring
 
-## 🤝 Contributing and Development
+ 
 
-### Contributing Guidelines
-
-**Bug Reports:**
-1. Check existing issues
-2. Provide reproducible examples
-3. Include system information (R version, OS)
-4. Attach relevant error messages
-
-**Feature Requests:**
-1. Describe the use case
-2. Suggest implementation approach
-3. Consider backwards compatibility
-4. Provide example workflows
-
-**Code Contributions:**
-1. Follow existing coding style
-2. Include documentation and comments
-3. Add appropriate error handling
-4. Test with multiple phenotypes
-
-### Development Setup
-
-```bash
-# Clone repository
-git clone https://github.com/MuhammadMuneeb007/PhenotypeToGeneDownloaderR.git
-cd PhenotypeToGeneDownloaderR
-
-# Install development dependencies
-Rscript requirements.R
-pip install -r requirements.txt
-
-# Run test suite
-Rscript test_all_modules.R
-python -m pytest tests/
-```
-
-### Code Architecture
-
-**R Scripts:**
-- Modular design with standard functions
-- Consistent error handling patterns
-- Standardized output formats
-- Configurable parameters
-
-**Python Analysis:**
-- Object-oriented analysis modules
-- Reproducible visualization pipeline
-- Statistical analysis framework
-- Extensible reporting system
-
+ 
 ## 📄 License and Citation
 
 ### License
