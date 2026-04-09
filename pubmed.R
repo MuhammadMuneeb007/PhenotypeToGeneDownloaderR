@@ -467,8 +467,7 @@ main <- function() {
     dir.create(output_dir, recursive = TRUE)
   }
 
-  clean_phenotype <- gsub("[^\\w\\s-]", "", phenotype, perl = TRUE)
-  clean_phenotype <- gsub("\\s+", "_", trimws(clean_phenotype))
+  clean_phenotype <- gsub("[^a-zA-Z0-9_-]", "_", phenotype)
 
   output_file <- if (length(args) > 1) {
     args[2]

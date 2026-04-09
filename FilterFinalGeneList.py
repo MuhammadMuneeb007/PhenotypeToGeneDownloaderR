@@ -37,53 +37,53 @@ LOOKUP_CACHE   = "human_genes_lookups.pkl"
 # Resolve input: phenotype name or CSV path
 # ─────────────────────────────────────────────
 def resolve_input_file(arg: str) -> str:
-    """
-    Accept either a direct CSV path or a phenotype name.
-    If the argument is not an existing file, search AllAnalysisGene/data/
-    and AllPackagesGenes/ for a matching genes CSV.
-    """
-    # Direct file path
     if os.path.isfile(arg):
         return arg
 
-    # Treat as phenotype — clean the same way R does
     clean = re.sub(r'[^a-zA-Z0-9_\-]', '_', arg)
+    clean = re.sub(r'_+', '_', clean).strip('_')
 
-    search_dirs = [
-        Path("AllAnalysisGene") / "data",
-        Path("AllPackagesGenes"),
-        Path("AllAnalysisGene") / "reports",
-        Path(".")
+    data_dir = Path("AllPackagesGenes")
+
+    # Priority 1: combined ALL_SOURCES file
+    for f in sorted(data_dir.glob(f"{clean}_ALL_SOURCES_GENES.csv")):
+        print(f"   Using combined file: {f}")
+        return str(f)
+
+    # Priority 2: build combined from all per-database *_genes.csv files
+    gene_files = [
+        f for f in sorted(data_dir.glob(f"{clean}_*_genes.csv"))
+        if "ALL_SOURCES" not in f.name
+        and "SOURCES_SUMMARY" not in f.name
     ]
 
-    # Priority order: all_genes > ALL_SOURCES > any _genes file
-    candidates = []
-    for d in search_dirs:
-        if not d.exists():
-            continue
-        for f in d.glob(f"{clean}*genes*.csv"):
-            candidates.append(f)
-        for f in d.glob(f"{clean}*ALL_SOURCES*.csv"):
-            candidates.append(f)
+    if gene_files:
+        print(f"   No combined file found. Merging {len(gene_files)} per-database files:")
+        for f in gene_files:
+            print(f"     {f.name}")
 
-    if candidates:
-        # Prefer the combined all_genes file
-        for c in candidates:
-            if "all_genes" in c.name.lower():
-                print(f"   Auto-detected input file: {c}")
-                return str(c)
-        for c in candidates:
-            if "all_sources" in c.name.lower():
-                print(f"   Auto-detected input file: {c}")
-                return str(c)
-        print(f"   Auto-detected input file: {candidates[0]}")
-        return str(candidates[0])
+        all_genes = []
+        gene_columns = ['Gene', 'GeneSymbol', 'Gene_Symbol', 'gene_symbol', 'symbol']
 
-    print(f"❌ Could not find a CSV file for phenotype '{arg}'.")
-    print(f"   Searched for '{clean}*genes*.csv' in:")
-    for d in search_dirs:
-        print(f"     {d}/")
-    print("   Pass the full CSV path directly instead.")
+        for f in gene_files:
+            try:
+                df = pd.read_csv(f)
+                gene_col = next((c for c in gene_columns if c in df.columns), None)
+                if gene_col:
+                    genes = df[gene_col].dropna().unique().tolist()
+                    all_genes.extend(genes)
+            except Exception as e:
+                print(f"     ⚠️  Could not read {f.name}: {e}")
+
+        # Deduplicate and save as temp combined file
+        unique_genes = sorted(set(str(g).strip() for g in all_genes if g))
+        combined_path = data_dir / f"{clean}_ALL_SOURCES_GENES.csv"
+        pd.DataFrame({'Gene': unique_genes}).to_csv(combined_path, index=False)
+        print(f"   ✅ Built combined file: {combined_path} ({len(unique_genes):,} unique genes)")
+        return str(combined_path)
+
+    print(f"❌ No gene files found for '{arg}' in {data_dir}/")
+    print(f"   Searched for: {clean}_*_genes.csv")
     sys.exit(1)
 
 
@@ -218,7 +218,17 @@ def validate_gene(symbol: str, gene_db: pd.DataFrame,
 
     return False, None, None, None, None
 
-
+def clean_gene_symbol(raw: str) -> str:
+    """Extract bare gene symbol from compound strings like:
+       'ARAF; A-Raf proto-oncogene'
+       'CACNA1A; calcium voltage-gated channel [KO:K04344]'
+    """
+    if not raw or not str(raw).strip():
+        return ""
+    s = str(raw).strip().strip('"').strip("'")
+    s = re.split(r'[;,\[\(]', s)[0].strip()
+    tokens = s.split()
+    return tokens[0].strip() if tokens else s
 # ─────────────────────────────────────────────
 # Main
 # ─────────────────────────────────────────────
@@ -242,8 +252,8 @@ def main():
     csv_file = resolve_input_file(sys.argv[1])
 
     stem           = Path(csv_file).stem
-    output_valid   = sys.argv[2] if len(sys.argv) > 2 else f"{stem}_valid_genes.csv"
-    output_invalid = sys.argv[3] if len(sys.argv) > 3 else f"{stem}_invalid_genes.csv"
+    output_valid   = sys.argv[2] if len(sys.argv) > 2 else str(Path("AllPackagesGenes") / f"{stem}_valid_genes.csv")
+    output_invalid = sys.argv[3] if len(sys.argv) > 3 else str(Path("AllPackagesGenes") / f"{stem}_invalid_genes.csv")
 
     # ── Load gene database ────────────────────────────────────────────────
     gene_db, symbol_lookup, synonym_index = download_gene_database()
@@ -287,7 +297,7 @@ def main():
 
     for _, row in tqdm(df.iterrows(), total=len(df),
                        desc="Validating", unit="gene"):
-        gene = str(row[gene_col]).strip()
+        gene = clean_gene_symbol(str(row[gene_col]))
 
         (is_valid, official_symbol,
          gene_id, ensembl_id, description) = validate_gene(
@@ -349,3 +359,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
+    
+    
+    

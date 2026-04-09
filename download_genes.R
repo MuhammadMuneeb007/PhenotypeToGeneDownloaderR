@@ -66,8 +66,8 @@ run_database_script <- function(script_path, phenotype) {
   start_time <- Sys.time()
 
   tryCatch({
-    result <- system2("Rscript", args = c(script_path, phenotype),
-                      stdout = TRUE, stderr = TRUE, wait = TRUE)
+    result <- system2("Rscript", args = c(script_path, shQuote(phenotype)),
+                  stdout = TRUE, stderr = TRUE, wait = TRUE)
 
     end_time <- Sys.time()
     runtime  <- as.numeric(difftime(end_time, start_time, units = "secs"))
@@ -160,6 +160,8 @@ run_database_script <- function(script_path, phenotype) {
 #' @return List with gene counts and file info
 count_genes_from_files <- function(phenotype, source_name) {
   clean_phenotype <- gsub("[^a-zA-Z0-9_-]", "_", phenotype)
+  clean_phenotype <- gsub("_+",             "_", clean_phenotype)
+  clean_phenotype <- gsub("^_|_$",          "",  clean_phenotype)
   output_dir <- "AllPackagesGenes"
 
   patterns <- list(

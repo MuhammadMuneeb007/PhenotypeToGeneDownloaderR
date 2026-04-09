@@ -161,7 +161,9 @@ main <- function() {
     dir.create(output_dir, recursive = TRUE)
   }
   
-  clean_phenotype <- gsub("[^\\w\\s-]", "", phenotype, perl = TRUE)
+  clean_phenotype <- gsub("[^a-zA-Z0-9_-]", "_", phenotype)
+clean_phenotype <- gsub("_+",             "_", clean_phenotype)
+clean_phenotype <- gsub("^_|_$",          "",  clean_phenotype)
   output_file     <- file.path(output_dir, paste0(clean_phenotype, "_reactome_pathways.csv"))
   genes_only_file <- file.path(output_dir, paste0(clean_phenotype, "_reactome_pathways_genes.csv"))
   
