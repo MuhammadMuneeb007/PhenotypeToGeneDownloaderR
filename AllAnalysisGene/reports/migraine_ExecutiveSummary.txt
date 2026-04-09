@@ -1,0 +1,29 @@
+
+EXECUTIVE SUMMARY - GENE ANALYSIS REPORT
+========================================
+Phenotype: Migraine
+Analysis Date: 2026-04-09 21:35:35
+
+KEY FINDINGS:
+✓ Total unique genes identified: 6703
+✓ High-confidence genes (3+ databases): 251
+✓ Databases analyzed: 9
+✓ Total records processed: 8549
+
+DATABASE PERFORMANCE:
+🏆 Most productive: clinvar
+📊 Largest dataset: gwasrapidd
+⭐ Highest quality: gwasrapidd
+
+CONFIDENCE LEVELS:
+🟢 High confidence genes: 251 (3.7%)
+🟡 Medium confidence genes: 1256 (18.7%)
+🔴 Low confidence genes: 5196 (77.5%)
+
+RECOMMENDATIONS:
+1. Focus on high-confidence genes for further validation
+2. Prioritize databases: 
+3. Consider additional validation for medium-confidence genes
+4. Gene overlap rate of 21.6% indicates good database complementarity
+
+For detailed analysis, see individual report files and visualizations.

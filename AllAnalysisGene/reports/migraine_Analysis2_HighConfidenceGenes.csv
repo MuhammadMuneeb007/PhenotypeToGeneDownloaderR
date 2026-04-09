@@ -1,0 +1,252 @@
+Gene,Frequency,Databases,Coverage_Percentage
+CACNA1A,7,"clinvar, gwasrapidd, hpo, omim, opentargets, pubmed, uniprot",77.77777777777779
+TREX1,7,"clinvar, gwasrapidd, hpo, omim, opentargets, pubmed, uniprot",77.77777777777779
+COL4A1,6,"clinvar, gwasrapidd, hpo, omim, opentargets, pubmed",66.66666666666666
+KCNK18,6,"clinvar, hpo, omim, opentargets, pubmed, uniprot",66.66666666666666
+PRRT2,6,"clinvar, hpo, omim, opentargets, pubmed, uniprot",66.66666666666666
+SLC1A3,6,"clinvar, hpo, omim, opentargets, pubmed, uniprot",66.66666666666666
+SCN1A,6,"clinvar, hpo, omim, opentargets, pubmed, uniprot",66.66666666666666
+SLC2A1,6,"clinvar, hpo, omim, opentargets, pubmed, uniprot",66.66666666666666
+CSNK1D,6,"clinvar, hpo, omim, opentargets, pubmed, uniprot",66.66666666666666
+ATP1A2,6,"clinvar, hpo, omim, opentargets, pubmed, uniprot",66.66666666666666
+ALPK1,5,"clinvar, hpo, omim, opentargets, uniprot",55.55555555555556
+TNF,5,"clinvar, hpo, omim, opentargets, pubmed",55.55555555555556
+COL4A2,5,"clinvar, gwasrapidd, omim, opentargets, pubmed",55.55555555555556
+ESR1,5,"clinvar, hpo, omim, opentargets, pubmed",55.55555555555556
+RNF213,5,"clinvar, gwasrapidd, omim, opentargets, pubmed",55.55555555555556
+ACSL5,5,"gtex, gtex_prioritized, gwasrapidd, opentargets, pubmed",55.55555555555556
+NOTCH3,5,"clinvar, hpo, omim, opentargets, pubmed",55.55555555555556
+OPA1,5,"clinvar, hpo, omim, opentargets, pubmed",55.55555555555556
+POLG,5,"clinvar, hpo, omim, opentargets, pubmed",55.55555555555556
+ATP1A4,5,"gtex, gtex_prioritized, omim, opentargets, pubmed",55.55555555555556
+ADARB2,5,"gtex, gtex_prioritized, gwasrapidd, opentargets, pubmed",55.55555555555556
+CACNA1H,5,"clinvar, gwasrapidd, omim, opentargets, pubmed",55.55555555555556
+EDNRA,5,"clinvar, hpo, omim, opentargets, pubmed",55.55555555555556
+HTRA1,5,"clinvar, gwasrapidd, omim, opentargets, pubmed",55.55555555555556
+GABRG2,4,"clinvar, hpo, omim, opentargets",44.44444444444444
+AMACR,4,"clinvar, hpo, omim, uniprot",44.44444444444444
+PHACTR1,4,"gwasrapidd, omim, opentargets, pubmed",44.44444444444444
+FADS2,4,"gtex, gtex_prioritized, gwasrapidd, opentargets",44.44444444444444
+AFAP1,4,"gtex, gtex_prioritized, gwasrapidd, opentargets",44.44444444444444
+TPSD1,4,"gtex, gtex_prioritized, gwasrapidd, opentargets",44.44444444444444
+TIGAR,4,"gtex, gtex_prioritized, gwasrapidd, opentargets",44.44444444444444
+MTHFR,4,"clinvar, omim, opentargets, pubmed",44.44444444444444
+GSTM4,4,"gtex, gtex_prioritized, opentargets, pubmed",44.44444444444444
+SLC12A1,4,"gtex, gtex_prioritized, opentargets, pubmed",44.44444444444444
+NLRP1,4,"gtex, gtex_prioritized, gwasrapidd, opentargets",44.44444444444444
+HLA-C,4,"gtex, gtex_prioritized, opentargets, pubmed",44.44444444444444
+MT-TL1,4,"clinvar, hpo, opentargets, pubmed",44.44444444444444
+TGFBR2,4,"hpo, omim, opentargets, pubmed",44.44444444444444
+ATP1A3,4,"omim, opentargets, pubmed, uniprot",44.44444444444444
+PEX11B,4,"clinvar, hpo, omim, uniprot",44.44444444444444
+PDGFRB,4,"clinvar, hpo, omim, opentargets",44.44444444444444
+RPS26,4,"gtex, gtex_prioritized, gwasrapidd, opentargets",44.44444444444444
+NDUFS5,4,"gtex, gtex_prioritized, gwasrapidd, opentargets",44.44444444444444
+CALCA,4,"gwasrapidd, omim, opentargets, pubmed",44.44444444444444
+TGFB3,4,"gwasrapidd, omim, opentargets, pubmed",44.44444444444444
+CST3,4,"hpo, omim, opentargets, uniprot",44.44444444444444
+PDGFB,4,"hpo, omim, opentargets, pubmed",44.44444444444444
+SLC25A21,4,"gwasrapidd, omim, opentargets, pubmed",44.44444444444444
+SLC6A4,4,"clinvar, omim, opentargets, pubmed",44.44444444444444
+SCN5A,4,"clinvar, opentargets, pubmed, uniprot",44.44444444444444
+SLC20A2,4,"clinvar, omim, opentargets, pubmed",44.44444444444444
+HTR1F,4,"omim, opentargets, pubmed, uniprot",44.44444444444444
+MDK,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+ICA1L,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+EHMT1,3,"clinvar, gwasrapidd, opentargets",33.33333333333333
+GFRA1,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+HPSE2,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+HOXB3,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+GPATCH4,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+EHMT2,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+ONECUT2,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+PBX2,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+PDE4B,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+FECH,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+EP300,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+PLEKHA1,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+PROCR,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+RERE,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+RIMS1,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+CYP2C19,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+SMG6,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+SLC9B1,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+SERPINA1,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+PRKG1,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+PLXNB1,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+CHRNA2,3,"gwasrapidd, omim, opentargets",33.33333333333333
+SLC44A4,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+CPS1,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+SLC24A3,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+CHST6,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+TAAR1,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+STX1A,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+CHRNB1,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+STAC3,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+STAT6,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+SPTBN2,3,"gwasrapidd, omim, opentargets",33.33333333333333
+SSBP3,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+DEPDC5,3,"clinvar, omim, opentargets",33.33333333333333
+CTDP1,3,"clinvar, gtex, gtex_prioritized",33.33333333333333
+MEF2D,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+IL10,3,"gwasrapidd, hpo, opentargets",33.33333333333333
+FGF23,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+LRP11,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+LRP1,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+FGF6,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+MOG,3,"gwasrapidd, hpo, opentargets",33.33333333333333
+MRGPRE,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+MPPED2,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+FHL3,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+MLLT10,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+MLXIPL,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+IGHMBP2,3,"clinvar, gtex, gtex_prioritized",33.33333333333333
+MICU1,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+IMPDH2,3,"clinvar, opentargets, pubmed",33.33333333333333
+NSF,3,"gwasrapidd, omim, opentargets",33.33333333333333
+NOS1,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+MRM2,3,"gwasrapidd, omim, opentargets",33.33333333333333
+NOTCH4,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+FXN,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+NLGN1,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+NMUR2,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+NGFR,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+NCOR2,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+FUT9,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+NGF,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+PLCG1,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+PBRM1,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+MAPT,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+MANBA,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+FHL5,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+JAG1,3,"gwasrapidd, hpo, opentargets",33.33333333333333
+HEY2,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+HMOX2,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+KCNA1,3,"hpo, omim, opentargets",33.33333333333333
+LGI1,3,"hpo, omim, opentargets",33.33333333333333
+MYORG,3,"hpo, omim, opentargets",33.33333333333333
+ASTN2,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+ATP5F1A,3,"gwasrapidd, omim, opentargets",33.33333333333333
+ATP2B1,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+B3GNT8,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+PGK1,3,"hpo, omim, opentargets",33.33333333333333
+RELN,3,"hpo, omim, opentargets",33.33333333333333
+HTR1A,3,"hpo, omim, opentargets",33.33333333333333
+HLA-B,3,"hpo, opentargets, pubmed",33.33333333333333
+HLA-DRB1,3,"hpo, opentargets, pubmed",33.33333333333333
+BCAR1,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+BTBD16,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+C4A,3,"gwasrapidd, hpo, opentargets",33.33333333333333
+ZBTB39,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+TARBP2,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+TSPAN2,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+CALCB,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+TMEM170A,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+TRPM8,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+TRIM32,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+TLN1,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+UFL1,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+TBL2,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+TGFB1,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+CRHR1,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+TARS2,3,"gwasrapidd, omim, opentargets",33.33333333333333
+THADA,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+TMA7,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+CFDP1,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+CSF1R,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+PRDM16,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+SCN11A,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+SLC35G6,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+SPINK2,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+PRMT6,3,"gtex, gtex_prioritized, opentargets",33.33333333333333
+SORT1,3,"gtex, gtex_prioritized, opentargets",33.33333333333333
+NDUFA6,3,"gtex, gtex_prioritized, opentargets",33.33333333333333
+CCDC40,3,"gtex, gtex_prioritized, gwasrapidd",33.33333333333333
+ATG10,3,"gtex, gtex_prioritized, opentargets",33.33333333333333
+DBH,3,"omim, opentargets, pubmed",33.33333333333333
+ABO,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+NEDD1,3,"gtex, gtex_prioritized, opentargets",33.33333333333333
+DDAH1,3,"gtex, gtex_prioritized, opentargets",33.33333333333333
+MIPEP,3,"gtex, gtex_prioritized, omim",33.33333333333333
+LINC02153,3,"gtex, gtex_prioritized, gwasrapidd",33.33333333333333
+ADCYAP1R1,3,"gtex, gtex_prioritized, opentargets",33.33333333333333
+MT-ND5,3,"clinvar, hpo, opentargets",33.33333333333333
+MT-ND1,3,"clinvar, hpo, opentargets",33.33333333333333
+MT-CO1,3,"clinvar, hpo, opentargets",33.33333333333333
+MT-CO2,3,"clinvar, hpo, opentargets",33.33333333333333
+FARS2,3,"omim, opentargets, pubmed",33.33333333333333
+ACE,3,"omim, opentargets, pubmed",33.33333333333333
+CACNB4,3,"omim, opentargets, pubmed",33.33333333333333
+ANKDD1B,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+STIM1,3,"hpo, omim, opentargets",33.33333333333333
+TWNK,3,"hpo, omim, opentargets",33.33333333333333
+MFN2,3,"clinvar, gtex, gtex_prioritized",33.33333333333333
+TLR4,3,"hpo, opentargets, pubmed",33.33333333333333
+MT-TK,3,"clinvar, hpo, opentargets",33.33333333333333
+MT-CO3,3,"clinvar, hpo, opentargets",33.33333333333333
+CACNA1E,3,"omim, opentargets, pubmed",33.33333333333333
+TP53,3,"hpo, opentargets, pubmed",33.33333333333333
+GSTM3,3,"gtex, gtex_prioritized, pubmed",33.33333333333333
+AOC1,3,"gtex, gtex_prioritized, opentargets",33.33333333333333
+ATP23,3,"gtex, gtex_prioritized, opentargets",33.33333333333333
+ADORA2B,3,"gtex, gtex_prioritized, opentargets",33.33333333333333
+LRRC37A2,3,"gtex, gtex_prioritized, gwasrapidd",33.33333333333333
+RALGAPA1,3,"gtex, gtex_prioritized, opentargets",33.33333333333333
+LYZ,3,"gtex, gtex_prioritized, omim",33.33333333333333
+P2RX1,3,"gtex, gtex_prioritized, opentargets",33.33333333333333
+TMEM176B,3,"gtex, gtex_prioritized, opentargets",33.33333333333333
+TUFM,3,"gtex, gtex_prioritized, omim",33.33333333333333
+TMEM176A,3,"gtex, gtex_prioritized, opentargets",33.33333333333333
+NECAP1,3,"gtex, gtex_prioritized, omim",33.33333333333333
+PRPH2,3,"gtex, gtex_prioritized, opentargets",33.33333333333333
+MT-TQ,3,"clinvar, hpo, opentargets",33.33333333333333
+MT-ND4,3,"clinvar, hpo, opentargets",33.33333333333333
+KCNK2,3,"opentargets, pubmed, uniprot",33.33333333333333
+SNX16,3,"gtex, gtex_prioritized, gwasrapidd",33.33333333333333
+VARS2,3,"gtex, gtex_prioritized, omim",33.33333333333333
+CLEC18A,3,"gtex, gtex_prioritized, opentargets",33.33333333333333
+PRKCZ,3,"gtex, gtex_prioritized, gwasrapidd",33.33333333333333
+DND1P1,3,"gtex, gtex_prioritized, gwasrapidd",33.33333333333333
+ZFP57,3,"gtex, gtex_prioritized, gwasrapidd",33.33333333333333
+HSD17B12,3,"gtex, gtex_prioritized, opentargets",33.33333333333333
+LINC02210,3,"gtex, gtex_prioritized, gwasrapidd",33.33333333333333
+C1QL3,3,"gtex, gtex_prioritized, gwasrapidd",33.33333333333333
+TRAP1,3,"gtex, gtex_prioritized, opentargets",33.33333333333333
+LINC01252,3,"gtex, gtex_prioritized, gwasrapidd",33.33333333333333
+TAMM41,3,"gtex, gtex_prioritized, omim",33.33333333333333
+EFHB,3,"gtex, gtex_prioritized, gwasrapidd",33.33333333333333
+HLA-DQA2,3,"gtex, gtex_prioritized, opentargets",33.33333333333333
+MIF,3,"gtex, gtex_prioritized, opentargets",33.33333333333333
+INTS1,3,"gtex, gtex_prioritized, opentargets",33.33333333333333
+TGFB2,3,"omim, opentargets, pubmed",33.33333333333333
+HTR2A,3,"omim, opentargets, pubmed",33.33333333333333
+INSR,3,"omim, opentargets, pubmed",33.33333333333333
+NOS3,3,"omim, opentargets, pubmed",33.33333333333333
+ERAP2,3,"gtex, gtex_prioritized, pubmed",33.33333333333333
+MTRF1L,3,"gtex, gtex_prioritized, gwasrapidd",33.33333333333333
+MAPK8IP1P2,3,"gtex, gtex_prioritized, gwasrapidd",33.33333333333333
+LRRC37A4P,3,"gtex, gtex_prioritized, gwasrapidd",33.33333333333333
+HLA-DQB1,3,"gtex, gtex_prioritized, hpo",33.33333333333333
+PEX6,3,"gtex, gtex_prioritized, omim",33.33333333333333
+SFXN4,3,"gtex, gtex_prioritized, omim",33.33333333333333
+PNKD,3,"omim, opentargets, pubmed",33.33333333333333
+PNKP,3,"omim, opentargets, pubmed",33.33333333333333
+SLC16A1,3,"omim, opentargets, pubmed",33.33333333333333
+SNAP25,3,"omim, opentargets, pubmed",33.33333333333333
+STX10,3,"clinvar, gwasrapidd, opentargets",33.33333333333333
+RBM6,3,"clinvar, gtex, gtex_prioritized",33.33333333333333
+RRM2B,3,"clinvar, hpo, omim",33.33333333333333
+SKI,3,"clinvar, gwasrapidd, opentargets",33.33333333333333
+TPH2,3,"omim, opentargets, pubmed",33.33333333333333
+CALR,3,"clinvar, hpo, opentargets",33.33333333333333
+CELSR3,3,"clinvar, opentargets, pubmed",33.33333333333333
+HBQ1,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+GRM7,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+KCNE2,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+LATS1,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+L3MBTL2,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+ITPK1,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+KIAA0040,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+KCND3,3,"gwasrapidd, omim, opentargets",33.33333333333333
+KCNK5,3,"gwasrapidd, opentargets, pubmed",33.33333333333333
+ITGB5,3,"gwasrapidd, opentargets, pubmed",33.33333333333333

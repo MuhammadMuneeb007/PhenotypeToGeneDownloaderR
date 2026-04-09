@@ -1,0 +1,69 @@
+name: gene-analysis
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+
+dependencies:
+  # Python version
+  - python>=3.8
+
+  # Core data analysis
+  - pandas>=1.5.0
+  - numpy>=1.21.0
+
+  # Visualization
+  - matplotlib>=3.5.0
+  - seaborn>=0.11.0
+  - plotly>=5.0.0
+
+  # Statistical analysis
+  - scipy>=1.7.0
+  - scikit-learn>=1.0.0
+
+  # Network analysis
+  - networkx>=2.6.0
+
+  # R and R packages (if installing R through conda)
+  - r-base>=4.0.0
+  - r-dplyr
+  - r-readr
+  - r-stringr
+  - r-httr
+  - r-jsonlite
+  - r-xml2
+  - r-rvest
+  - r-curl
+
+  # Bioconductor packages (available through conda-forge/bioconda)
+  - bioconductor-reactomepa
+  - bioconductor-org.hs.eg.db
+  - bioconductor-annotationdbi
+  - bioconductor-go.db
+  - bioconductor-keggrest
+
+  # Additional Python packages via pip
+  - pip
+  - pip:
+    - matplotlib-venn>=0.11.6
+    - venn>=0.1.3
+    - adjustText>=0.7.3
+
+# Optional dependencies for advanced users
+# Uncomment the following lines if needed:
+#   - jupyter
+#   - ipywidgets
+#   - statsmodels
+#   - pingouin
+
+# Development tools (optional)
+#   - pytest
+#   - black
+#   - flake8
+
+# Usage Instructions:
+# 1. Create environment: conda env create -f environment.yml
+# 2. Activate environment: conda activate gene-analysis
+# 3. Install additional R packages: Rscript requirements.R
+# 4. Run pipeline: Rscript download_genes.R <phenotype>
+# 5. Run analysis: python download_genes_analysis.py <phenotype>
